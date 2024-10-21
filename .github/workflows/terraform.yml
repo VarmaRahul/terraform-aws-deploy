@@ -47,7 +47,7 @@ jobs:
       if: github.ref == 'refs/heads/main'
       run: terraform apply --auto-approve
 
-    # - name: Terraform Destroy (Rollback)
-    #   if: github.event_name == 'workflow_dispatch' && github.event.inputs.destroy == 'true'
-    #   run: terraform destroy --auto-approve
+    - name: Terraform Destroy (Rollback)
+      if: github.event_name == 'workflow_dispatch' && github.event.inputs.destroy == 'true'
+      run: terraform destroy --auto-approve
 
