@@ -16,7 +16,7 @@ module "ec2_instance" {
   name = "t1"
 
   instance_type          = "t3.micro"
-  key_name               = "rahul"
+  key_name               = "sample"
 
   tags = {
     Terraform   = "true"
