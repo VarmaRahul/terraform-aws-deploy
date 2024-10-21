@@ -1,14 +1,14 @@
 terraform {
   required_providers {
     aws = {
-      source  = "hashicorp/aws"
-      version = "5.5.0"
+      source = "hashicorp/aws"
+      version = "5.72.1"
     }
   }
 }
 
 provider "aws" {
-  region = "eu-north-1"
+  region = "ap-south-1"
 }
 module "ec2_instance" {
   source  = "terraform-aws-modules/ec2-instance/aws"
@@ -16,10 +16,7 @@ module "ec2_instance" {
   name = "t1"
 
   instance_type          = "t3.micro"
-  key_name               = "vaishu"
-  monitoring             = true
-  vpc_security_group_ids = ["sg-03946aa60e5ded4b0"]
-  subnet_id              = "subnet-0bf75427a7b9569dd"
+  key_name               = "rahul"
 
   tags = {
     Terraform   = "true"
