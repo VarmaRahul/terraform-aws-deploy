@@ -1,12 +1,12 @@
 name: 'Terraform EC2 Workflow'
 
 on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
+  # push:
+  #   branches:
+  #     - main
+  # pull_request:
+  #   branches:
+  #     - main
   workflow_dispatch: # Manual trigger
     inputs:
       destroy:
