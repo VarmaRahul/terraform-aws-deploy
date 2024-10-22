@@ -38,7 +38,7 @@ jobs:
         aws-region: ${{ env.AWS_REGION }}
 
     - name: Terraform Init
-      run: terraform init
+      run: terraform init -backend-config="bucket=backend-terraformstate" -backend-config="key=terraform-${{ github.run_id }}.tfstate" -backend-config="region=ap-south-1"
 
     - name: Terraform Plan
       run: terraform plan
