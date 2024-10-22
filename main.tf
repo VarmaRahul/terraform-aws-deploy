@@ -8,7 +8,6 @@ terraform {
 
   backend "s3" {
     bucket = "backend-terraformstate"
-    key    = "terraform-${var.github_run_id}.tfstate"
     region = "ap-south-1"
   }
 }
