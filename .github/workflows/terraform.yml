@@ -38,7 +38,7 @@ jobs:
         aws-region: ${{ env.AWS_REGION }}
 
     - name: Terraform Init
-      run: terraform init -backend-config="bucket=backend-terraformstate" -backend-config="key=terraform-${{ github.run_id }}.tfstate" -backend-config="region=ap-south-1"
+      run: terraform init
 
     - name: Terraform Plan
       run: terraform plan
@@ -49,5 +49,5 @@ jobs:
 
     - name: Terraform Destroy (Rollback)
       if: github.event_name == 'workflow_dispatch' && github.event.inputs.destroy == 'true'
-      run: terraform destroy --auto-approve -var "github_run_id=${{ github.run_id }}"
+      run: terraform destroy --auto-approve
 
