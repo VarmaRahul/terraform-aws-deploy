@@ -17,11 +17,6 @@ provider "aws" {
   region = "ap-south-1"
 }
 
-variable "github_run_id" {
-  description = "The GitHub Actions run ID"
-  type        = string
-}
-
 module "ec2_instance" {
   source  = "terraform-aws-modules/ec2-instance/aws"
 
