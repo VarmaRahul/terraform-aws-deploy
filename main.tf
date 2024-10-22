@@ -22,7 +22,7 @@ module "ec2_instance" {
 
   name = "t1"
 
-  instance_type          = "t3.micro"
+  instance_type          = "t2.micro"
   key_name               = "sample"
 
   tags = {
