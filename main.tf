@@ -8,7 +8,7 @@ terraform {
 
   backend "s3" {
     bucket = "backend-terraformstate"
-    key    = "terraform-${{ github.run_id }}.tfstate"
+    key    = "terraform-${var.github_run_id}.tfstate"
     region = "ap-south-1"
   }
 }
@@ -16,6 +16,12 @@ terraform {
 provider "aws" {
   region = "ap-south-1"
 }
+
+variable "github_run_id" {
+  description = "The GitHub Actions run ID"
+  type        = string
+}
+
 module "ec2_instance" {
   source  = "terraform-aws-modules/ec2-instance/aws"
 
